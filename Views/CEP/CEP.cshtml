@@ -1,0 +1,29 @@
+﻿@page
+@model Aula04._1.Views.CEP.CEPModel
+@{
+}
+
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Buscar de CEP</h1>
+
+CEP: <input type="text" id="cep"/>
+<br>
+RUA: <input type="text" id="rua"/>
+<br>
+<br>
+<button type="button" onclick="buscar()">Buscar</button>
+
+<script>
+async function buscar(){
+  var cep = document.getElementById("cep").value;
+  var url  = `https://viacep.com.br/ws/${cep}/json/`;
+  var resp = await fetch(url);
+  var meu_json = await resp.json();
+  document.getElementById("rua").value = meu_json["logradouro"];
+}
+</script>
+
+</body>
+</html>
