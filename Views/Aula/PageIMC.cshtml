@@ -1,0 +1,41 @@
+﻿﻿<html>
+<head>
+</head>
+
+<body>
+
+    Digite o seu peso
+    <br />
+    <input type="text" id="pe" />
+
+    <br />
+    <br />
+    Digite a sua altura
+    <input type="text" id="al" />
+    <br />
+    <br />
+    <input type="button"
+           value="Calcular"
+           onclick="calcular_imc()" />
+
+    <script>
+           function calcular_imc (){
+
+        var peso = parseFloat(document.getElementById("pe").value);
+           var altura = parseFloat(document.getElementById("al").value);
+               var imc = peso / Math.pow(altura,2);
+
+               alert("seu imc é " + imc);
+               
+      if (imc > 25) alert("sobrepeso");
+      else if (imc >= 18.5 && imc <= 24.99) alert("boooooa");
+      else alert ("aoooo magrão");
+
+           }
+
+
+    </script>
+</body>
+
+
+</html>
